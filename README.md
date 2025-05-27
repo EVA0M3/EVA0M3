@@ -130,10 +130,3 @@
 <img src="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN@master/assets/images/rocket.png" /></div>
 <!-- ########################################## 分割 ########################################## -->
 
-  <img src="https://cdn.jsdelivr.net/gh/GGB00M3/GGB00M3/profile-3d-contrib/profile-night-rainbow.svg" />
-</picture>
-
-
-
-![GitHub 3D Contribution Graph](https://raw.githubusercontent.com/GGB00M3/GGB00M3/main/skyline.svg)
-
