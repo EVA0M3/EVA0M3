@@ -1,4 +1,4 @@
-name: generate animation
+name: snake
 
 on:
   # run automatically every 12 hours
@@ -27,7 +27,7 @@ jobs:
       - name: generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: GGB00M3
+          github_user_name: "GGB00M3"
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
