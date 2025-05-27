@@ -148,6 +148,6 @@
 </picture>
 
 
-```glb
-https://raw.githubusercontent.com/GGB00M3/GGB00M3/main/skyline.glb
-```
+
+![GitHub 3D Contribution Graph](https://raw.githubusercontent.com/GGB00M3/GGB00M3/main/skyline.svg)
+
