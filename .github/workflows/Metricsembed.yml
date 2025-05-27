@@ -1,2 +1,14 @@
-- name: Metrics embed
-  uses: lowlighter/metrics@v3.34
+name: GitHub Metrics
+on:
+  schedule:
+    - cron: "0 0 * * *"  # 每天 UTC 时间 0 点运行
+  workflow_dispatch:      # 允许手动触发
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 添加其他配置参数（根据 metrics 文档）
