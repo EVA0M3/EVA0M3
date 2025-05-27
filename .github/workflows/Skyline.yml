@@ -1,0 +1,30 @@
+name: 3D Skyline Generator
+on:
+  schedule:
+    - cron: "0 12 * * *"  # 每天 UTC 12:00 (北京时间 20:00)
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 必须权限
+    steps:
+      - uses: actions/checkout@v4  # 必须步骤
+    
+      - name: Generate 3D Skyline
+        uses: JasonEtco/activity-box@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILENAME: "skyline.svg"
+          BRANCH: "main"  # 必须与仓库默认分支名一致
+          COMMIT_MESSAGE: "Update 3D Skyline"
+          THEME: "dark"   # 可选参数：light/dark/dark_dimmed
+
+      - name: Auto-Commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add skyline.svg
+          git commit -m "Update 3D Skyline" || echo "No changes"
+          git push
