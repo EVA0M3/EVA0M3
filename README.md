@@ -145,6 +145,7 @@ srcset="https://raw.githubusercontent.com/GGB00M3/GGB00M3/output/dist/github-con
 
 https://raw.githubusercontent.com/GGB00M3/GGB00M3/output/github-contribution-grid-snake.svg
 
-
+<!-- README.md 中的引用路径需包含 dist/ -->
+<img src="https://raw.githubusercontent.com/GGB00M3/GGB00M3/output/dist/github-contribution-grid-snake.svg">
 
 
