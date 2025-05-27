@@ -1,6 +1,8 @@
 name: Metrics
 on:
-  schedule: [{cron: "0 * * * *"}]
+  # Schedule updates (each hour)
+  schedule: [{cron: "0 0 * * *"}]
+  # Lines below let you run workflow manually and on each commit
   workflow_dispatch:
   push: {branches: ["master", "main"]}
 jobs:
@@ -9,35 +11,22 @@ jobs:
     environment: 
       name: production
     permissions:
-      contents: write    # 需要写入权限提交文件
-      pull-requests: write  # 如果需要统计 PR 数据
-      issues: write      # 如果需要统计 issues 数据
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: lowlighter/metrics@latest
         with:
-          persist-credentials: false  # 禁用默认的凭证持久化
-
-      - name: Generate metrics
-        uses: lowlighter/metrics@latest
-        with:
+          # Your GitHub token
+          # The following scopes are required:
+          #  - public_access (default scope)
+          # The following additional scopes may be required:
+          #  - read:org      (for organization related metrics)
+          #  - read:user     (for user related data)
+          #  - read:packages (for some packages related data)
+          #  - repo          (optional, if you want to include private repositories)
           token: ${{ secrets.METRICS_TOKEN }}
+
+          # Options
           user: Peter-JXL
           template: classic
-          base: header, activity, community, repositories, metadata, stars, follows
-          plugin_lines: yes           # 显示代码行数统计
-          plugin_habits: yes          # 显示编码习惯
-          plugin_languages: yes       # 显示语言分布
-          plugin_stars: yes           # 显示 star 项目
-          plugin_follows: yes         # 显示关注列表
+          base: header, activity, community, repositories, metadata
           config_timezone: Asia/Shanghai
-          filename: metrics.svg       # 指定输出文件名
-          commit_message: Update metrics  # 自定义提交信息
-
-      - name: Commit changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add metrics.svg
-          git commit -m "${{ inputs.commit_message }}" || echo "No changes to commit"
-          git push
