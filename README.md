@@ -3,7 +3,7 @@
 
   <!-- dynamic typing effect 动态打字效果 -->
   
-  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=云想衣裳花想容，春风拂槛露华浓;笨蛋，要开心哦!&center=true&size=27)](https://git.io/typing-svg)
+  [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=孤帆远影碧空尽，唯见长江天际流;笨蛋，要开心哦!&center=true&size=27)](https://git.io/typing-svg)
 
 <!-- ########################################## 分割 ########################################## -->
   <!-- knock code pictures 敲代码的图片 -->
