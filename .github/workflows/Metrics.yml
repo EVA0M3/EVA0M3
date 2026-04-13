@@ -1,32 +1,28 @@
-name: Metrics
+name: GitHub Stats Card
 on:
-  # Schedule updates (each hour)
-  schedule: [{cron: "0 0 * * *"}]
-  # Lines below let you run workflow manually and on each commit
-  workflow_dispatch:
-  push: {branches: ["master", "main"]}
+  workflow_dispatch:  # 允许手动运行
+  schedule:            # 每天自动更新一次
+    - cron: "0 0 * * *"
+
 jobs:
-  github-metrics:
+  build:
     runs-on: ubuntu-latest
-    environment: 
-      name: production
+    timeout-minutes: 2  # 不会卡住
     permissions:
       contents: write
-    steps:
-      - uses: lowlighter/metrics@latest
-        with:
-          # Your GitHub token
-          # The following scopes are required:
-          #  - public_access (default scope)
-          # The following additional scopes may be required:
-          #  - read:org      (for organization related metrics)
-          #  - read:user     (for user related data)
-          #  - read:packages (for some packages related data)
-          #  - repo          (optional, if you want to include private repositories)
-          token: ${{ secrets.METRICS_TOKEN }}
 
-          # Options
-          user: Peter-JXL
-          template: classic
-          base: header, activity, community, repositories, metadata
-          config_timezone: Asia/Shanghai
+    steps:
+      - name: Generate stats
+        uses: yoshi389137/github-stats-card@v1.1.1
+        with:
+          USERNAME: GGB00M3
+          THEME: radical
+          SHOW_TOTAL: true
+          SHOW_ICONS: true
+
+      - name: Upload
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: ./
