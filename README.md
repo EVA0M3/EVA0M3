@@ -130,3 +130,17 @@
 <img src="https://cdn.jsdelivr.net/gh/sun0225SUN/sun0225SUN@master/assets/images/rocket.png" /></div>
 <!-- ########################################## 分割 ########################################## -->
 
+
+测试*************************
+
+<!-- ########################################## 分割 ########################################## -->
+  <!-- Snake Code Contribution Map 贪吃蛇代码贡献图 -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GGB00M3/GGB00M3/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GGB00M3/GGB00M3/output/github-contribution-grid-snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/GGB00M3/GGB00M3/output/github-contribution-grid-snake-dark.svg" />
+  </picture>
+
+</div>
+<!-- ########################################## 分割 ########################################## -->
+
