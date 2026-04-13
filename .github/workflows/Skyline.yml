@@ -1,7 +1,0 @@
-- name: Generate 3D Skyline
-  uses: JasonEtco/activity-box@v2
-  with:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    FILENAME: "skyline.svg"
-    # 可选：显式声明用户名（非必须但更明确）
-    USERNAME: "GGB00M3"  # 🟠 非必须，但建议添加
